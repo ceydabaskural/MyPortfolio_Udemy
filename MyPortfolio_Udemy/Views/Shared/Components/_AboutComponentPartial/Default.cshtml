@@ -1,0 +1,38 @@
+﻿
+<section id="about" class="s-about target-section">
+
+    <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full text-center">
+            <h3>@ViewBag.aboutTitle</h3>
+            <h1>@ViewBag.aboutSubDescription</h1>
+            <p class="lead">@ViewBag.aboutDetail</p>
+        </div>
+    </div>
+
+    <div class="row about-content">
+
+        <div class="col-six tab-full left">
+            <h3>Who am I!</h3>
+
+            <p>@ViewBag.aboutDetail</p>
+
+        </div>
+
+        @await Component.InvokeAsync("_SkillComponentPartial")
+
+    </div> <!-- end about-content -->
+
+    <div class="row about-content about-content--buttons">
+
+        <div class="col-six tab-full left">
+            <a href="/Default/Index#works" class="btn btn--primary full-width">My Projects</a>
+        </div>
+        <div class="col-six tab-full right">
+            <a href="/Default/Index#contact" class="btn full-width">Hire Me Now</a>
+        </div>
+
+    </div> <!-- end about-content buttons -->
+    @await Component.InvokeAsync("_ExperienceComponentPartial")
+    <!-- end about-content timeline -->
+
+</section>

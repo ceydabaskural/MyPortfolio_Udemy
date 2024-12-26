@@ -1,0 +1,41 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "UpdatePortfolio";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Portfolio</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Update Portfolio</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <input type="hidden" asp-for="PortfolioId" />
+                            <label>Title</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />
+                            <label>Subtitle</label>
+                            <input type="text" asp-for="Subtitle" class="form-control" />
+                            <br />
+                            <label>Image Url</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />
+                            <label>Github Link</label>
+                            <input type="text" asp-for="Url" class="form-control" />
+                            <br />
+                            <label>Description</label>
+                            <input type="text" asp-for="Description" class="form-control" />
+                            <br />
+                            <button class="btn btn-warning">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

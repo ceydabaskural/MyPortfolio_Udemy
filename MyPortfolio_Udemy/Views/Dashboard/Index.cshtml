@@ -1,0 +1,284 @@
+﻿@model List<Portfolio>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+    int count = 1;
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Dashboard</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-stats card-warning">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-users"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Referances</p>
+                                    <h4 class="card-title">@ViewBag.testimonials</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-success">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-bar-chart"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Skills</p>
+                                    <h4 class="card-title">@ViewBag.skills</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-danger">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-newspaper-o"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Projects</p>
+                                    <h4 class="card-title">@ViewBag.projects</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-primary">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">To-Do</p>
+                                    <h4 class="card-title">@ViewBag.toDo</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Map</h4>
+                        <p class="card-category">
+                            Map of the distribution of users around the world
+                        </p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100167.13512275764!2d26.21447991050525!3d38.32066712598593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb79b752d35675%3A0x61287b379ef50511!2zw4dlxZ9tZSwgT3ZhY8Sxaywgw4dlxZ9tZS_EsHptaXI!5e0!3m2!1sen!2str!4v1732354548832!5m2!1sen!2str" width="910" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-card-no-pd">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="fw-bold mt-1">My Portfolio</h3>
+                        <a href="/Default/Index" class="btn btn-primary btn-full text-left mt-3 mb-3"><i class="la la-plus"></i> Go to Website!</a>
+                    </div>
+                    <div class="card-footer">
+                        <ul class="nav">
+                            <li class="nav-item auto"><a class="btn btn-default btn-link" href="/Dashboard/Index/"><i class="la la-refresh"></i> Refresh</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="progress-card">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted">Messages</span>
+                                <span class="text-muted fw-bold"> @ViewBag.messages</span>
+                            </div>
+                            <div class="progress mb-2" style="height: 7px;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="50%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted">Experiences</span>
+                                <span class="text-muted fw-bold">@ViewBag.experiences</span>
+                            </div>
+                            <div class="progress mb-2" style="height: 7px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="20%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted">Completed Tasks</span>
+                                <span class="text-muted fw-bold">@ViewBag.completedTasks</span>
+                            </div>
+                            <div class="progress mb-2" style="height: 7px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="10%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted">Social Medias</span>
+                                <span class="text-muted fw-bold">@ViewBag.socialMedias</span>
+                            </div>
+                            <div class="progress mb-2" style="height: 7px;">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <p class="fw-bold mt-1">Statistic</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="la la-pie-chart text-warning"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Number</p>
+                                    <h4 class="card-title">150GB</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-heart-o text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Followers</p>
+                                    <h4 class="card-title">+45K</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header ">
+                        <h4 class="card-title">Table</h4>
+                        <p class="card-category">Users Table</p>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-head-bg-success table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Subtitle</th>
+                                    <th scope="col">Desription</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Subtitle</td>
+                                        <td>@item.Description</td>
+                                    </tr>
+                                    count++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-tasks">
+                    <div class="card-header ">
+                        <h4 class="card-title">Tasks</h4>
+                        <p class="card-category">To Do List</p>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-full-width">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input  select-all-checkbox" type="checkbox" data-select="checkbox" data-target=".task-select">
+                                                    <span class="form-check-sign"></span>
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <th>Task</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input task-select" type="checkbox">
+                                                    <span class="form-check-sign"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>@ViewBag.toDoList</td>
+                                        <td class="td-actions text-right">
+                                            <div class="form-button-action">
+                                                <a href="/ToDoList/UpdateToDoList/@ViewBag.toDoId">
+                                                    <button type="button" data-toggle="tooltip" title="Edit Task" class="btn btn-link <btn-simple-primary">
+                                                        <i class="la la-edit"></i>
+                                                    </button>
+                                                </a>
+                                                <a href="/ToDoList/DeleteToDoList/@ViewBag.toDoId">
+                                                    <button type="button" data-toggle="tooltip" title="Remove" class="btn btn-link btn-simple-danger">
+                                                        <i class="la la-times"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

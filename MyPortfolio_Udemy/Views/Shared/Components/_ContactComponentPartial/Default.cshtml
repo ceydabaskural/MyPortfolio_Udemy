@@ -1,0 +1,99 @@
+﻿@model Message
+<section id="contact" class="s-contact target-section">
+
+    <div class="overlay"></div>
+
+    <div class="row narrow section-intro">
+        <div class="col-full">
+            <h3>Contact</h3>
+            <h1>Say Hello.</h1>
+
+            <p class="lead">
+                We'd love to hear from you! Whether you have questions, suggestions, or just want to share your thoughts, feel free to reach out. Use the form below to send us a message, and we'll get back to you as soon as possible.
+                <br />
+                Looking forward to connecting with you!
+
+            </p>
+        </div>
+    </div>
+
+    <div class="row contact__main">
+        <div class="col-eight tab-full contact__form">
+            <form asp-controller="Contact" method="post" asp-action="SendMessage">
+                <fieldset>
+
+                    <div class="form-field">
+                        <input name="NameSurname" type="text" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="Email" type="email" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                    </div> 
+                    <div class="form-field">
+                        <input name="Subject" type="text" placeholder="Subject" value="" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="MessageDetail" placeholder="Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Submit</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="message-success">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            else if (TempData["ErrorMessage"] != null)
+            {
+                <div class="message-warning">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+
+            <!-- contact-warning -->
+            <div class="message-warning">
+                Something went wrong. Please try again.
+            </div>
+
+            <!-- contact-success -->
+            <div class="message-success">
+                Your message was sent, thank you!<br>
+            </div>
+
+        </div>
+        <div class="col-four tab-full contact__infos">
+            <h4 class="h06">Phone</h4>
+            <p>
+                Phone: (+63) 555 1212<br>
+                Mobile: (+63) 555 0100<br>
+                Fax: (+63) 555 0101
+            </p>
+
+            <h4 class="h06">Email</h4>
+            <p>
+                someone@holawebsite.com<br>
+                info@holawebsite.com
+            </p>
+
+            <h4 class="h06">Address</h4>
+            <p>
+                1600 Amphitheatre Parkway<br>
+                Mountain View, CA<br>
+                94043 US
+            </p>
+        </div>
+
+    </div>
+
+</section>

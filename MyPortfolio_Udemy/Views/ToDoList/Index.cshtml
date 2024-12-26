@@ -1,0 +1,59 @@
+﻿@model List<ToDoList>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">To Do List</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Experiences List</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            The activities related to the to do can be done by using the panel below :
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col">Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ToDoListId</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Date</td>
+                                        @if (item.Status == true)
+                                        {
+                                            <td><a href="/ToDoList/ChangeIsStatusToFalse/@item.ToDoListId" class="btn btn-dark">Mark as not Done!</a></td>
+                                        }
+                                        else
+                                        {
+                                            <td><a href="/ToDoList/ChangeIsStatusToTrue/@item.ToDoListId" class="btn btn-info">Mark as Done!</a></td>
+                                        }
+                                        <td><a href="/ToDoList/DeleteToDoList/@item.ToDoListId" class="btn btn-outline-warning">Delete</a></td>
+                                        <td><a href="/ToDoList/UpdateToDoList/@item.ToDoListId" class="btn btn-outline-success">Update</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/ToDoList/CreateToDoList/" class="btn btn-primary">Create</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
